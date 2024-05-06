@@ -2,6 +2,11 @@ import Head from "next/head";
 import Image from "next/image";
 import { Inter } from "next/font/google";
 import styles from "@/styles/Home.module.css";
+import { Box, Container, Grid, Stack, Typography } from "@mui/material";
+import BannerSection from "@/components/bannerSection";
+import waveLine from "../../public/images/waveLine.png";
+import Services from "@/components/services";
+import data from "@/assets/data";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -14,101 +19,86 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className={`${styles.main} ${inter.className}`}>
-        <div className={styles.description}>
-          <p>
-            Get started by editing&nbsp;
-            <code className={styles.code}>src/pages/index.js</code>
-          </p>
-          <div>
-            <a
-              href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
+
+      <div id="home">
+        <BannerSection />
+      </div>
+      {/* <div className={styles.wave}>
+      </div> */}
+      <div id="services" className={styles.wave}>
+        <Stack
+          direction={"row"}
+          alignItems={"center"}
+          justifyContent={"center"}
+          spacing={2}
+          pt={10}
+        >
+          <Box
+            sx={{
+              backgroundColor: "#0e59f2",
+              width: 7,
+              height: 7,
+              borderRadius: 0.3,
+            }}
+          ></Box>{" "}
+          <Typography
+            textTransform={"uppercase"}
+            fontSize={15}
+            fontWeight={550}
+          >
+            {" "}
+            Our Services
+          </Typography>
+          <Box
+            sx={{
+              backgroundColor: "#0e59f2",
+              width: 7,
+              height: 7,
+              borderRadius: 0.3,
+            }}
+          ></Box>{" "}
+        </Stack>
+        <Typography
+          fontSize={55}
+          textAlign={"center"}
+          fontWeight={600}
+          letterSpacing={2}
+          mt={4}
+        >
+          Service We Provide
+        </Typography>
+        <Grid container>
+          <Grid items lg={5} margin={"auto"}>
+            <Typography
+              fontSize={16}
+              textAlign={"center"}
+              color="#a6a8ae"
+              fontWeight={500}
+              mt={4}
             >
-              By{" "}
-              <Image
-                src="/vercel.svg"
-                alt="Vercel Logo"
-                className={styles.vercelLogo}
-                width={100}
-                height={24}
-                priority
-              />
-            </a>
-          </div>
-        </div>
-
-        <div className={styles.center}>
-          <Image
-            className={styles.logo}
-            src="/next.svg"
-            alt="Next.js Logo"
-            width={180}
-            height={37}
-            priority
-          />
-        </div>
-
-        <div className={styles.grid}>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2>
-              Docs <span>-&gt;</span>
-            </h2>
-            <p>
-              Find in-depth information about Next.js features and&nbsp;API.
-            </p>
-          </a>
-
-          <a
-            href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2>
-              Learn <span>-&gt;</span>
-            </h2>
-            <p>
-              Learn about Next.js in an interactive course with&nbsp;quizzes!
-            </p>
-          </a>
-
-          <a
-            href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2>
-              Templates <span>-&gt;</span>
-            </h2>
-            <p>
-              Discover and deploy boilerplate example Next.js&nbsp;projects.
-            </p>
-          </a>
-
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2>
-              Deploy <span>-&gt;</span>
-            </h2>
-            <p>
-              Instantly deploy your Next.js site to a shareable URL
-              with&nbsp;Vercel.
-            </p>
-          </a>
-        </div>
-      </main>
+              we deliver expert IT services and consulting, including managed
+              IT, cybersecurity, and cloud solutions.
+            </Typography>
+          </Grid>
+        </Grid>
+        <Container sx={{ mt: 10}}>
+          <Grid container spacing={3}>
+            {data.services.map((val, i) => (
+              <Grid item lg={3} key={i}>
+                <Services
+                  img={val.img}
+                  heading1={val.heading1}
+                  heading2={val.heading2}
+                  description={val.description}
+                />
+              </Grid>
+            ))}
+          </Grid>
+        </Container>
+      </div>
+      <div id="about">
+        <Box sx={{ height: 500 }}>About</Box>
+      </div>
     </>
   );
 }
