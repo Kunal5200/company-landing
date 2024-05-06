@@ -1,7 +1,7 @@
-import technology from "../../public/images/technology.svg";
-import management from "../../public/images/management.svg";
-import website from "../../public/images/website.svg";
-import tracking from "../../public/images/tracking.svg";
+import technology from "@/images/technology.svg";
+import management from "@/images/management.svg";
+import website from "@/images/website.svg";
+import tracking from "@/images/tracking.svg";
 let data = {
   services: [
     {

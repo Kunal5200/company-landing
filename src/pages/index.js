@@ -2,12 +2,14 @@ import Head from "next/head";
 import Image from "next/image";
 import { Inter } from "next/font/google";
 import styles from "@/styles/Home.module.css";
-import { Box, Container, Grid, Stack, Typography } from "@mui/material";
+import { Box, Button, Container, Grid, Stack, Typography } from "@mui/material";
 import BannerSection from "@/components/bannerSection";
-import waveLine from "../../public/images/waveLine.png";
+import waveLine from "@/images/waveLine.png";
 import Services from "@/components/services";
 import data from "@/assets/data";
-
+import HeadingPrefix from "@/components/headingStarter";
+import aboutImage1 from "@/images/aboutimage2.png";
+import aboutImage2 from "@/images/aboutimage1.png";
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
@@ -31,16 +33,9 @@ export default function Home() {
           alignItems={"center"}
           justifyContent={"center"}
           spacing={2}
-          pt={10}
+          mt={10}
         >
-          <Box
-            sx={{
-              backgroundColor: "#0e59f2",
-              width: 7,
-              height: 7,
-              borderRadius: 0.3,
-            }}
-          ></Box>{" "}
+          <HeadingPrefix />
           <Typography
             textTransform={"uppercase"}
             fontSize={15}
@@ -49,14 +44,7 @@ export default function Home() {
             {" "}
             Our Services
           </Typography>
-          <Box
-            sx={{
-              backgroundColor: "#0e59f2",
-              width: 7,
-              height: 7,
-              borderRadius: 0.3,
-            }}
-          ></Box>{" "}
+          <HeadingPrefix />
         </Stack>
         <Typography
           fontSize={55}
@@ -81,7 +69,7 @@ export default function Home() {
             </Typography>
           </Grid>
         </Grid>
-        <Container sx={{ mt: 10}}>
+        <Container sx={{ mt: 10 }}>
           <Grid container spacing={3}>
             {data.services.map((val, i) => (
               <Grid item lg={3} key={i}>
@@ -97,7 +85,70 @@ export default function Home() {
         </Container>
       </div>
       <div id="about">
-        <Box sx={{ height: 500 }}>About</Box>
+        <Container sx={{ mt: 10 }}>
+          <Grid container spacing={3} alignItems={"center"}>
+            <Grid item lg={6}>
+              <Stack direction={"row"} alignItems={"center"} spacing={2}>
+                <HeadingPrefix />
+                <Typography fontSize={15} fontWeight={550}>
+                  WELCOME TO OUR COMPANY
+                </Typography>
+              </Stack>
+              <Typography fontSize={45} fontWeight={550} mt={2}>
+                We Are Increasing Business Success With Technology
+              </Typography>
+              <Typography mt={2} color={"grey"} fontSize={16} fontWeight={500}>
+                An IT solution service company may serve clients from various
+                industries such as healthcare, finance, education, and
+                manufacturing. They may work on a project basis, providing
+                services for a specific project or on a long-term
+                basis...Amazing communication.Best trending designing
+                experienceEmail & Live chat.
+              </Typography>
+            </Grid>
+            <Grid item lg={6} textAlign={"end"}>
+              <Image src={aboutImage1} width={500} />
+              <Box sx={{ position: "relative" }}>
+                <Image
+                  src={aboutImage2}
+                  className={styles.aboutImageSection}
+                  width={250}
+                />
+              </Box>
+            </Grid>
+          </Grid>
+        </Container>
+        <Box className={styles.consultation_wrapper} sx={{ mt: 10 }}>
+          <Container maxWidth="lg">
+            <Grid container alignItems={"center"}>
+              <Grid item lg={6}>
+                <Typography sx={{ color: "#fff", fontWeight: "550" }}>
+                  WE ARE HERE TO ANSWER YOUR QUESTIONS 24/7
+                </Typography>
+                <Typography fontSize={50} color={"#fff"}>
+                  Need A Consultation?
+                </Typography>
+              </Grid>
+              <Grid item lg={6} textAlign={"end"}>
+                <Button
+                  sx={{
+                    border: "1px solid #0e59f2",
+                    color: "#fff",
+                    backgroundColor: "#0e59f2",
+                    borderRadius: 20,
+                    p: 2,
+                    ":hover": {
+                      color: "#fff",
+                      backgroundColor: "#0e59f2",
+                    },
+                  }}
+                >
+                  Let's Get Started
+                </Button>
+              </Grid>
+            </Grid>
+          </Container>
+        </Box>
       </div>
     </>
   );

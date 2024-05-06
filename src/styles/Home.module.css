@@ -5,3 +5,22 @@
   background-repeat: no-repeat;
   background-size: cover;
 } */
+.aboutImageSection {
+  position: absolute;
+  right: 50%;
+  bottom: 50%;
+  border-radius: 20px;
+  border: 3px solid #fff;
+}
+.consultation_wrapper {
+  background-image: url("../../public/images/background-parallax.jpg");
+  height: 60vh;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

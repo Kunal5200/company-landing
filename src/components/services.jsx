@@ -8,7 +8,7 @@ const Services = (props) => {
           boxShadow: "rgba(0, 0, 0, 0.05) 0px 1px 2px 0px",
           p: 6,
           ":hover": {
-            boxShadow: "0px 0px 2px 2px #d7d7d7",
+            boxShadow: "rgba(0, 0, 0, 0.05) 0px 0px 0px 1px",
           },
           transition: "0.5s ease all",
         }}
@@ -24,7 +24,10 @@ const Services = (props) => {
             borderRadius: 3,
           }}
         >
-          <Image src={props.img} className="animate__animated animate__pulse animate__infinite	infinite" />
+          <Image
+            src={props.img}
+            className="animate__animated animate__pulse animate__infinite	infinite"
+          />
         </Box>
         <Typography mt={5} fontSize={20} fontWeight={700}>
           {props.heading1} <br /> {props.heading2}
