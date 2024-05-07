@@ -2,7 +2,15 @@ import Head from "next/head";
 import Image from "next/image";
 import { Inter } from "next/font/google";
 import styles from "@/styles/Home.module.css";
-import { Box, Button, Container, Grid, Stack, Typography } from "@mui/material";
+import {
+  Box,
+  Button,
+  Container,
+  Divider,
+  Grid,
+  Stack,
+  Typography,
+} from "@mui/material";
 import BannerSection from "@/components/bannerSection";
 import waveLine from "@/images/waveLine.png";
 import Services from "@/components/services";
@@ -10,6 +18,9 @@ import data from "@/assets/data";
 import HeadingPrefix from "@/components/headingStarter";
 import aboutImage1 from "@/images/aboutimage2.png";
 import aboutImage2 from "@/images/aboutimage1.png";
+import Contact from "@/components/contact";
+import Counter from "@/components/counter";
+import ClientTestimonial from "@/components/clientTestimonial";
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
@@ -139,8 +150,10 @@ export default function Home() {
                     p: 2,
                     ":hover": {
                       color: "#fff",
-                      backgroundColor: "#0e59f2",
+                      backgroundColor: "#222",
+                      border: "1px solid #222",
                     },
+                    fontWeight: 550,
                   }}
                 >
                   Let's Get Started
@@ -148,6 +161,25 @@ export default function Home() {
               </Grid>
             </Grid>
           </Container>
+        </Box>
+        <Container maxWidth="lg" sx={{ mt: 10 }}>
+          <Contact />
+        </Container>
+
+        <Container maxWidth="lg" sx={{ mt: 10 }}>
+          <Divider />
+          <Box mt={10}>
+            <Grid container spacing={2} alignItems={"center"}>
+              {data.counterText.map((val, i) => (
+                <Grid item lg={3} key={i}>
+                  <Counter img={val.img} end={val.end} heading={val.heading} />
+                </Grid>
+              ))}
+            </Grid>
+          </Box>
+        </Container>
+        <Box sx={{ mt: 10 }}>
+          <ClientTestimonial />
         </Box>
       </div>
     </>

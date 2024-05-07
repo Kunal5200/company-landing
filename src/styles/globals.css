@@ -102,5 +102,25 @@ body {
 }
 
 ::-webkit-scrollbar {
-  width: 5px;
+  width: 0px;
+}
+.image {
+  width: 100%;
+}
+.client_bg {
+  background-image: url("../../public/images/testimonialBackground.jpg");
+  width: 100%;
+  height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.testi_image {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
 }
