@@ -16,7 +16,7 @@ export const routes = [
     url: "#team",
   },
   {
-    name: "Blog",
-    url: "#blog",
+    name: "Contact",
+    url: "#contact",
   },
 ];

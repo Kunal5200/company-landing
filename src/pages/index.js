@@ -21,7 +21,9 @@ import aboutImage2 from "@/images/aboutimage1.png";
 import Contact from "@/components/contact";
 import Counter from "@/components/counter";
 import ClientTestimonial from "@/components/clientTestimonial";
-const inter = Inter({ subsets: ["latin"] });
+import TeamSection from "@/components/teamSection";
+import contact from "@/images/contact-image.png";
+import Brands from "@/components/brands";
 
 export default function Home() {
   return (
@@ -181,6 +183,122 @@ export default function Home() {
         <Box sx={{ mt: 10 }}>
           <ClientTestimonial />
         </Box>
+      </div>
+      <div id="team">
+        <Container sx={{ mt: 10 }} maxWidth="lg">
+          <Stack
+            direction={"row"}
+            alignItems={"center"}
+            justifyContent={"center"}
+            spacing={2}
+          >
+            <HeadingPrefix />
+            <Typography fontSize={15} fontWeight={600}>
+              TEAM MEMBERS
+            </Typography>
+            <HeadingPrefix />
+          </Stack>
+          <Typography
+            fontSize={45}
+            fontWeight={600}
+            textAlign={"center"}
+            mt={2}
+          >
+            Our Top Skilled Experts
+          </Typography>
+          <Grid container spacing={2} mt={2}>
+            {data.teams.map((val, i) => (
+              <Grid item lg={3}>
+                <TeamSection
+                  img={val.img}
+                  designation={val.designation}
+                  name={val.name}
+                  socialAccounts={val.socialAccounts}
+                />
+              </Grid>
+            ))}
+          </Grid>
+        </Container>
+      </div>
+      <div id="contact">
+        <Box className={styles.contact_Banner} sx={{ mt: 10 }}>
+          <Container maxWidth="lg">
+            <Grid container alignItems={"center"}>
+              <Grid item lg={6}>
+                <Stack direction={"row"} alignItems={"center"} spacing={2}>
+                  <HeadingPrefix />
+                  <Typography fontSize={15} fontWeight={550}>
+                    START WORK WITH US
+                  </Typography>
+                </Stack>
+                <Typography fontSize={45} fontWeight={550} mt={2}>
+                  The Best{" "}
+                  <Typography variant="span" color={"#105af2"}>
+                    IT Service
+                  </Typography>
+                  <br /> Provider.
+                </Typography>
+                <Typography
+                  mt={2}
+                  color={"#9397a2"}
+                  fontSize={16}
+                  fontWeight={500}
+                >
+                  Managed IT services can help you outsource your IT needs to a
+                  third-party provider. This includes IT support, network
+                  monitoring, and maintenance, and disaster recovery and
+                  business continuity planning.
+                </Typography>
+                <Button
+                  sx={{
+                    mt: 2,
+                    border: "1px solid #105af2",
+                    backgroundColor: "#105af2",
+                    borderRadius: 20,
+                    p: 2,
+                    width: 200,
+                    color: "#fff",
+                    ":hover": {
+                      color: "#fff",
+                      backgroundColor: "#222",
+                    },
+                  }}
+                >
+                  Let's get started{" "}
+                </Button>
+              </Grid>
+              <Grid item lg={6} textAlign={"center"}>
+                <Image src={contact} height={600} />
+              </Grid>
+            </Grid>
+          </Container>
+        </Box>
+        <Container sx={{ mt: 10 }}>
+          <Stack
+            direction="row"
+            alignItems={"center"}
+            spacing={2}
+            justifyContent={"center"}
+          >
+            <HeadingPrefix />
+            <Typography sx={{ fontSize: 15, fontWeight: 600 }}>
+              BRAND WE WORK WITH
+            </Typography>
+            <HeadingPrefix />
+          </Stack>
+          <Typography
+            sx={{ fontSize: 45, fontWeight: 550, textAlign: "center", mt: 2 }}
+          >
+            Trusted by thousands Business
+          </Typography>
+          <Grid container mt={3}>
+            {data.brands.map((val, i) => (
+              <Grid item lg={3} key={i}>
+                <Brands img={val.img} />
+              </Grid>
+            ))}
+          </Grid>
+        </Container>
       </div>
     </>
   );

@@ -22,7 +22,7 @@ const Navbar = () => {
             {routes.map((val, i) => {
               return (
                 <Link href={val.url} key={i} className="link">
-                  <Typography fontWeight={500}>{val.name}</Typography>
+                  <Typography fontWeight={550} fontSize={15}>{val.name}</Typography>
                 </Link>
               );
             })}

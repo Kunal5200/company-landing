@@ -24,3 +24,16 @@
   align-items: center;
   justify-content: center;
 }
+.contact_Banner {
+  background-image: url("../../public/images/bg-contact.jpg");
+  height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.contact_image {
+  height: 100%;
+}
