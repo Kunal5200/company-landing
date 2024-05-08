@@ -127,7 +127,7 @@ body {
 
 .bg-footer {
   background-image: url("../../public/images/footer_bg.jpg");
-  height: 90vh;
+  height: 85vh;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
