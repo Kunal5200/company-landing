@@ -293,7 +293,7 @@ export default function Home() {
           </Typography>
           <Grid container mt={3}>
             {data.brands.map((val, i) => (
-              <Grid item lg={3} key={i}>
+              <Grid item lg={3} key={i} sx={{ borderRight: "1px solid #fff" }}>
                 <Brands img={val.img} />
               </Grid>
             ))}

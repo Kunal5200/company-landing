@@ -25,6 +25,11 @@ import zenTrade from "@/images/clients/zentrade.png";
 import linkify from "@/images/clients/linkify.png";
 import nextech from "@/images/clients/nextech.png";
 import yuhverse from "@/images/clients/yuhverse.png";
+import {
+  AccessTimeOutlined,
+  LocationOnOutlined,
+  SettingsPhoneOutlined,
+} from "@mui/icons-material";
 let data = {
   services: [
     {
@@ -212,6 +217,23 @@ let data = {
     },
     {
       img: yuhverse,
+    },
+  ],
+  footerSection: [
+    {
+      icon: <LocationOnOutlined sx={{ fontSize: 25 }} />,
+      heading: "Location",
+      description: "258 Daniel Mansion 258 Berlin Germany",
+    },
+    {
+      icon: <AccessTimeOutlined />,
+      heading: "Working Hours",
+      description: "Weekdays 10am-7pm",
+    },
+    {
+      icon: <SettingsPhoneOutlined />,
+      heading: "Contact Us",
+      description: `tronixinfo@tronix.com `,
     },
   ],
 };

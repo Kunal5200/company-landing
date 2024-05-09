@@ -14,6 +14,7 @@ import {
   FaLinkedinIn,
   FaTwitter,
 } from "react-icons/fa";
+import FooterBox from "./footerBox";
 
 const Footer = () => {
   const socialIcons = [
@@ -84,10 +85,16 @@ const Footer = () => {
       </Container>
       <Box sx={{ borderTop: "1px solid #eee", mt: 5 }}>
         <Container maxWidth="lg">
-          <Grid container>
-            <Grid item lg={4}>
-              
-            </Grid>
+          <Grid container mt={5} alignItems={"center"}>
+            {data.footerSection.map((val, i) => (
+              <Grid item lg={4} key={i} >
+                <FooterBox
+                  icon={val.icon}
+                  description={val.description}
+                  heading={val.heading}
+                />
+              </Grid>
+            ))}
           </Grid>
         </Container>
       </Box>

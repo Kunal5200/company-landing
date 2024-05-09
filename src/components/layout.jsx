@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Navbar from "./navbar";
 import Footer from "./footer";
 import ScrollToTop from "./scrolltoTop";
+import SubFooter from "./subFooter";
 
 const Layout = ({ children }) => {
   const [showScroll, setShowScroll] = useState(false);
@@ -35,6 +36,7 @@ const Layout = ({ children }) => {
 
       {children}
       <Footer />
+      <SubFooter />
     </div>
   );
 };
