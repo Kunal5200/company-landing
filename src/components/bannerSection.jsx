@@ -6,7 +6,7 @@ const BannerSection = () => {
   return (
     <React.Fragment>
       <div className="backgroundImage">
-        <Container maxWidth="lg" sx={{ pt: 10, margin: "auto" }}>
+        <Container maxWidth="lg" sx={{ pt: 7, margin: "auto" }}>
           <Grid container alignItems={"center"}>
             <Grid
               item
