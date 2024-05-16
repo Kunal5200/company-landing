@@ -85,7 +85,7 @@ const Footer = () => {
       </Container>
       <Box sx={{ borderTop: "1px solid #eee", mt: 5 }}>
         <Container maxWidth="lg">
-          <Grid container mt={5} alignItems={"center"}>
+          <Grid container mt={6} alignItems={"center"}>
             {data.footerSection.map((val, i) => (
               <Grid item lg={4} key={i} >
                 <FooterBox
